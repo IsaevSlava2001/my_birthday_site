@@ -1,0 +1,98 @@
+/* Базовые стили */
+body {
+    background: #1a1a1a no-repeat center;
+    color: #e0e0e0;
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.ability-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #4ecdc4;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+    font-size: 1rem; /* Уменьшаем размер текста */
+}
+
+.active-ability-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #cd834e;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 81, 0, 0.733);
+    font-size: 1rem; /* Уменьшаем размер текста */
+}
+
+.cooldown {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+.fake-death-btn {
+    background: #ffeead;
+    color: black;
+    animation: pulse 2s infinite;
+    font-size: 1rem; /* Уменьшаем размер текста */
+    padding: 10px 20px; /* Уменьшаем внутренние отступы */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Уменьшаем внешние отступы */
+    }
+
+    .ability-box,
+    .active-ability-box {
+        padding: 15px; /* Уменьшаем внутренние отступы */
+        margin: 10px 0; /* Уменьшаем внешние отступы */
+        font-size: 0.9rem; /* Еще меньше текст */
+    }
+
+    .cooldown {
+        font-size: 0.8rem; /* Уменьшаем размер текста */
+    }
+
+    .fake-death-btn {
+        padding: 8px 16px; /* Уменьшаем внутренние отступы */
+        font-size: 0.9rem;
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        padding: 5px; /* Еще меньше внешних отступов */
+    }
+
+    .ability-box,
+    .active-ability-box {
+        padding: 10px; /* Еще меньше внутренних отступов */
+        margin: 8px 0; /* Уменьшаем внешние отступы */
+        font-size: 0.8rem; /* Еще меньше текст */
+    }
+
+    .cooldown {
+        font-size: 0.7rem; /* Минимальный размер текста */
+    }
+
+    .fake-death-btn {
+        padding: 6px 12px; /* Минимальные внутренние отступы */
+        font-size: 0.8rem;
+    }
+}

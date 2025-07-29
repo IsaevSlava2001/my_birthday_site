@@ -1,0 +1,191 @@
+/* Базовые стили */
+body {
+    background: #1a1a1a;
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.form {
+    max-width: 100%; /* Растягиваем на всю ширину */
+    margin: 20px auto; /* Уменьшаем внешние отступы */
+    padding: 20px; /* Уменьшаем внутренние отступы */
+    background: #2d2d2d;
+    border-radius: 10px; /* Уменьшаем радиус скругления */
+    box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.3),
+        inset 0 0 30px rgba(0, 128, 0, 0.2);
+    border: 2px solid #4a902e;
+    position: relative;
+    overflow: hidden;
+}
+
+.form::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -30px;
+    width: 100px; /* Уменьшаем размер */
+    height: 100px; /* Уменьшаем размер */
+    background: radial-gradient(circle at 20% 20%, 
+        rgba(0,255,0,0.2), 
+        transparent 70%);
+    transform: rotate(-45deg);
+}
+
+.form::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -40px;
+    width: 150px; /* Уменьшаем размер */
+    height: 150px; /* Уменьшаем размер */
+    background: radial-gradient(circle at 80% 80%, 
+        rgba(0,255,0,0.15), 
+        transparent 60%);
+    transform: rotate(30deg);
+}
+
+.form label {
+    color: #aaffaa;
+    font-size: 14px; /* Уменьшаем размер текста */
+    letter-spacing: 1px; /* Уменьшаем интервал */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+    width: 100%;
+    padding: 10px; /* Уменьшаем внутренние отступы */
+    border: 2px solid #4a902e;
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+    background: #3d3d3d;
+    color: #aaffaa;
+    font-size: 14px; /* Уменьшаем размер текста */
+    box-shadow: 
+        inset 0 0 10px rgba(0, 255, 0, 0.3),
+        0 0 10px rgba(0, 255, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form input:focus {
+    border-color: #00ff00;
+    background: #4d4d4d;
+    box-shadow: 
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        0 0 15px rgba(0, 255, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.form input[type="submit"] {
+    width: 100%;
+    padding: 12px; /* Уменьшаем внутренние отступы */
+    background: #4a902e;
+    border: 2px solid #6bca4f;
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+    color: #aaffaa;
+    font-size: 16px; /* Уменьшаем размер текста */
+    letter-spacing: 1px; /* Уменьшаем интервал */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 15px rgba(0, 255, 0, 0.3),
+        inset 0 0 20px rgba(0, 128, 0, 0.2);
+}
+
+.form input[type="submit"]:hover {
+    background: #6bca4f;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.5),
+        inset 0 0 25px rgba(0, 128, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.form input[type="submit"]:active {
+    transform: translateY(0);
+    background: #3d802e;
+}
+
+/* Контейнер ошибки */
+.error-container {
+    position: relative;
+    margin: 15px 0; /* Уменьшаем внешние отступы */
+    padding: 10px; /* Уменьшаем внутренние отступы */
+    background: #3d0000;
+    border: 2px solid #ff0000;
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+    animation: decay 2s infinite;
+}
+
+/* Текст ошибки */
+.error-message {
+    color: #ffaaaa;
+    font-family: 'Creepster', cursive;
+    font-size: 16px; /* Уменьшаем размер текста */
+    text-align: center;
+    text-shadow: 
+        0 0 5px #ff0000,
+        0 0 10px rgba(255, 0, 0, 0.5);
+    position: relative;
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    .form {
+        padding: 15px; /* Еще меньше внутренних отступов */
+    }
+
+    .form label {
+        font-size: 13px; /* Еще меньше текст */
+    }
+
+    .form input[type="text"],
+    .form input[type="password"] {
+        padding: 8px; /* Еще меньше внутренних отступов */
+        font-size: 13px;
+    }
+
+    .form input[type="submit"] {
+        padding: 10px; /* Еще меньше внутренних отступов */
+        font-size: 15px;
+    }
+
+    .error-container {
+        padding: 8px; /* Еще меньше внутренних отступов */
+    }
+
+    .error-message {
+        font-size: 15px; /* Еще меньше текст */
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    .form {
+        padding: 10px; /* Минимальные внутренние отступы */
+    }
+
+    .form label {
+        font-size: 12px; /* Минимальный размер текста */
+    }
+
+    .form input[type="text"],
+    .form input[type="password"] {
+        padding: 6px; /* Минимальные внутренние отступы */
+        font-size: 12px;
+    }
+
+    .form input[type="submit"] {
+        padding: 8px; /* Минимальные внутренние отступы */
+        font-size: 14px;
+    }
+
+    .error-container {
+        padding: 6px; /* Минимальные внутренние отступы */
+    }
+
+    .error-message {
+        font-size: 14px; /* Минимальный размер текста */
+    }
+}

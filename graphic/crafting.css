@@ -1,0 +1,261 @@
+/* Базовые стили */
+body.rot-effect {
+    background: #1a1a1a url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVR4nGNgYGD4z4Af84D/4D8A//8YgAQ4AEePAe8A5ncAAAAASUVORK5CYII=') repeat;
+    color: #e0e0e0;
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.craft-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.recipe-card {
+    background: #2d2d2d;
+    border: 2px solid #4a4a4a;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(45, 255, 45, 0.3);
+    transition: transform 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(45, 255, 45, 0.5);
+}
+
+.components {
+    margin: 15px 0;
+}
+
+.component {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    color: #a3d39c;
+}
+
+.component img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px rgba(45, 255, 45, 0.5));
+}
+
+/* Анимация фона */
+@keyframes rot-drip {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body.rot-effect {
+    animation: rot-drip 5s infinite;
+    background-image: 
+        linear-gradient(270deg, 
+            rgba(45, 255, 45, 0.1), 
+            rgba(45, 150, 45, 0.05) 50%, 
+            rgba(45, 255, 45, 0.1)),
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVR4nGNgYGD4z4Af84D/4D8A//8YgAQ4AEePAe8A5ncAAAAASUVORK5CYII=');
+}
+
+.craft-btn {
+    background: linear-gradient(135deg, #2d5f2d, #3a8e3a);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Creepster', cursive;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(45, 255, 45, 0.3);
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #2d5f2d, #3a8e3a);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Creepster', cursive;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(45, 255, 45, 0.5);
+}
+
+.craft-btn:hover {
+    background: linear-gradient(135deg, #3a8e3a, #2d5f2d);
+    transform: scale(1.05);
+}
+
+.craft-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.component {
+    position: relative;
+    cursor: help;
+    margin: 8px 0;
+}
+
+.component:hover::after {
+    content: 'ID: <?= $component['item_id'] ?>';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(22, 22, 22, 0.9);
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.8em;
+    color: #a3d39c;
+    animation: tooltip-appear 0.3s;
+}
+
+@keyframes tooltip-appear {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.component span {
+    font-family: 'Creepster', cursive;
+    color: #a3d39c;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s;
+}
+
+.component:hover span {
+    color: #c1ff7d;
+    text-shadow: 0 0 5px rgba(193, 255, 125, 0.8);
+}
+
+.item-effect {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 10px 0;
+    padding: 8px;
+    background: rgba(45, 255, 45, 0.1);
+    border-radius: 5px;
+    font-style: italic;
+    color: #a3d39c;
+    animation: pulse-effect 2s infinite;
+}
+
+.component img {
+    filter: sepia(1) hue-rotate(90deg) saturate(2);
+}
+
+.effect-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    fill: #a3d39c;
+    flex-shrink: 0;
+    animation: effect-glow 3s infinite;
+}
+
+@keyframes pulse-effect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes effect-glow {
+    0% { filter: drop-shadow(0 0 5px rgba(45, 255, 45, 0.3)); }
+    50% { filter: drop-shadow(0 0 15px rgba(45, 255, 45, 0.8)); }
+    100% { filter: drop-shadow(0 0 5px rgba(45, 255, 45, 0.3)); }
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    body.rot-effect {
+        padding: 10px; /* Уменьшаем внешние отступы */
+    }
+
+    .craft-container {
+        gap: 15px; /* Уменьшаем расстояние между элементами */
+        padding: 15px; /* Уменьшаем внутренние отступы */
+    }
+
+    .recipe-card {
+        width: 100%; /* Растягиваем карточки на всю ширину */
+        padding: 12px; /* Уменьшаем внутренние отступы */
+        font-size: 0.9rem; /* Уменьшаем размер текста */
+    }
+
+    .components {
+        margin: 10px 0; /* Уменьшаем внешние отступы */
+    }
+
+    .component img {
+        width: 20px; /* Уменьшаем размер иконок */
+        height: 20px;
+    }
+
+    .craft-btn, .back-btn {
+        padding: 8px 16px; /* Уменьшаем внутренние отступы */
+        font-size: 0.9rem; /* Уменьшаем размер текста */
+    }
+
+    .item-effect {
+        height: 40px; /* Уменьшаем высоту эффекта */
+        padding: 6px; /* Уменьшаем внутренние отступы */
+    }
+
+    .effect-icon {
+        width: 16px; /* Уменьшаем размер иконки */
+        height: 16px;
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    body.rot-effect {
+        padding: 5px; /* Минимальные внешние отступы */
+    }
+
+    .craft-container {
+        gap: 10px; /* Минимальное расстояние между элементами */
+        padding: 10px; /* Минимальные внутренние отступы */
+    }
+
+    .recipe-card {
+        padding: 10px; /* Минимальные внутренние отступы */
+        font-size: 0.8rem; /* Минимальный размер текста */
+    }
+
+    .components {
+        margin: 8px 0; /* Минимальные внешние отступы */
+    }
+
+    .component img {
+        width: 18px; /* Минимальный размер иконок */
+        height: 18px;
+    }
+
+    .craft-btn, .back-btn {
+        padding: 6px 12px; /* Минимальные внутренние отступы */
+        font-size: 0.8rem; /* Минимальный размер текста */
+    }
+
+    .item-effect {
+        height: 35px; /* Минимальная высота эффекта */
+        padding: 5px; /* Минимальные внутренние отступы */
+    }
+
+    .effect-icon {
+        width: 14px; /* Минимальный размер иконки */
+        height: 14px;
+    }
+}

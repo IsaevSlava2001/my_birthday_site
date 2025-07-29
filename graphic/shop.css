@@ -1,0 +1,226 @@
+/* Базовые стили */
+body {
+    background: #1a1a1a url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVR4nGNgYGD4z4Af84D/4D8A//8YgAQ4AEePAe8A5ncAAAAASUVORK5CYII=') repeat;
+    color: #e0e0e0;
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #2d5f2d;
+    text-shadow: 2px 2px 4px #000;
+    text-align: center;
+    font-size: 2rem; /* Уменьшаем размер заголовка */
+    margin-bottom: 20px; /* Уменьшаем внешние отступы */
+}
+
+.shop-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Уменьшаем расстояние между элементами */
+    padding: 15px; /* Уменьшаем внутренние отступы */
+}
+
+/* Стили для товаров */
+.item {
+    background: #2d2d2d;
+    width: 100%; /* Растягиваем на всю ширину */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
+    border: 2px solid #4a4a4a;
+    border-radius: 8px; /* Уменьшаем радиус скругления */
+    padding: 15px; /* Уменьшаем внутренние отступы */
+    margin: 10px 0; /* Уменьшаем внешние отступы */
+    position: relative;
+    box-shadow: 0 0 10px rgba(45, 255, 45, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(45, 255, 45, 0.5);
+}
+
+.item h2 {
+    color: #5a7f5a;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    font-size: 1.2rem; /* Уменьшаем размер текста */
+}
+
+.item p {
+    margin: 8px 0; /* Уменьшаем внешние отступы */
+    line-height: 1.4;
+    padding: 15px; /* Уменьшаем внутренние отступы */
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+.item .price {
+    color: #a3d39c;
+    font-weight: bold;
+    font-size: 1rem; /* Уменьшаем размер текста */
+    margin: 10px 0 8px; /* Уменьшаем внешние отступы */
+}
+
+/* Стили для кнопок */
+button {
+    background: linear-gradient(135deg, #2d5f2d, #3a8e3a);
+    border: none;
+    color: white;
+    padding: 8px 15px; /* Уменьшаем внутренние отступы */
+    border-radius: 4px; /* Уменьшаем радиус скругления */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Creepster', cursive;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+    box-shadow: 0 0 8px rgba(45, 255, 45, 0.5);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #3a8e3a, #2d5f2d);
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Сообщения */
+.success,
+.error {
+    color: inherit;
+    background: #1a1a1a;
+    padding: 8px; /* Уменьшаем внутренние отступы */
+    border-radius: 4px; /* Уменьшаем радиус скругления */
+    margin: 8px 0; /* Уменьшаем внешние отступы */
+    text-align: center;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+/* Анимации */
+.rot-effect {
+    animation: rot-drip 5s infinite;
+    background: linear-gradient(270deg, 
+        rgba(45, 255, 45, 0.3), 
+        rgba(45, 150, 45, 0.1) 50%, 
+        rgba(45, 255, 45, 0.3));
+    background-size: 200% 200%;
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px dashed rgba(45, 255, 45, 0.3);
+    border-radius: 8px; /* Уменьшаем радиус скругления */
+    animation: rot-border 3s infinite;
+}
+
+.effect {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Уменьшаем высоту */
+    margin: 8px 0; /* Уменьшаем внешние отступы */
+    padding: 6px; /* Уменьшаем внутренние отступы */
+    background: rgba(45, 255, 45, 0.1);
+    border-radius: 4px; /* Уменьшаем радиус скругления */
+    font-style: italic;
+    color: #a3d39c;
+    animation: pulse 2s infinite;
+}
+
+.skull-icon {
+    width: 16px; /* Уменьшаем размер иконки */
+    height: 16px;
+    margin-right: 6px; /* Уменьшаем расстояние */
+    fill: #a3d39c;
+    flex-shrink: 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Уменьшаем внешние отступы */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ещё меньше заголовок */
+    }
+
+    .item {
+        padding: 12px; /* Ещё меньше внутренние отступы */
+    }
+
+    .item h2 {
+        font-size: 1.1rem; /* Ещё меньше текст */
+    }
+
+    .item p {
+        font-size: 0.85rem; /* Ещё меньше текст */
+    }
+
+    button {
+        padding: 6px 12px; /* Ещё меньше внутренние отступы */
+        font-size: 0.85rem;
+    }
+
+    .effect {
+        height: 35px; /* Ещё меньше высота */
+        padding: 5px; /* Ещё меньше внутренние отступы */
+    }
+
+    .skull-icon {
+        width: 14px; /* Ещё меньше размер иконки */
+        height: 14px;
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        padding: 5px; /* Минимальные внешние отступы */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Минимальный размер заголовка */
+    }
+
+    .item {
+        padding: 10px; /* Минимальные внутренние отступы */
+    }
+
+    .item h2 {
+        font-size: 1rem; /* Минимальный размер текста */
+    }
+
+    .item p {
+        font-size: 0.8rem; /* Минимальный размер текста */
+    }
+
+    button {
+        padding: 5px 10px; /* Минимальные внутренние отступы */
+        font-size: 0.8rem;
+    }
+
+    .effect {
+        height: 30px; /* Минимальная высота */
+        padding: 4px; /* Минимальные внутренние отступы */
+    }
+
+    .skull-icon {
+        width: 12px; /* Минимальный размер иконки */
+        height: 12px;
+    }
+}

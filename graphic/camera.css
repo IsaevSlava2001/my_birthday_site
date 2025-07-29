@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Базовые стили */
+body {
+  background: radial-gradient(circle at 50% 100%, #000 35%, #1a1a1a 100%);
+  font-family: 'Orbitron', monospace;
+  color: #c0c0c0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border: 2px solid rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3), inset 0 0 5px #000;
+  animation: blood-drip 10s infinite;
+}
+
+@keyframes blood-drip {
+  0% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); }
+  100% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
+}
+
+h1 {
+  position: relative;
+  color: #ff4444;
+  text-shadow: 0 0 10px #000;
+  margin-bottom: 30px;
+  font-size: 2rem; /* Уменьшаем размер заголовка */
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff4444, transparent);
+  bottom: -10px;
+  left: 0;
+  animation: blood-flow 5s infinite;
+}
+
+@keyframes blood-flow {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+.message {
+  position: relative;
+  padding: 20px;
+  background: #2d2d2d;
+  border-radius: 5px;
+  margin: 20px 0;
+  overflow: hidden;
+  font-size: 1rem; /* Уменьшаем размер текста */
+}
+
+.message::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAI0lEQVQYV2NkYGAwZmBgOMuAABYwAmJgYuAEAAC0AAIYBCBFAAAAAElFTkSuQmCC') repeat;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: static-noise 2s infinite;
+}
+
+@keyframes static-noise {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+button {
+  background: linear-gradient(to bottom, #ff4444, #8b0000);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem; /* Уменьшаем размер текста */
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: #000;
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.9rem; /* Уменьшаем размер текста в таблице */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #444;
+  background: #2d2d2d;
+  color: #c0c0c0;
+}
+
+tr:nth-child(even) {
+  background: #1a1a1a;
+}
+
+tr:hover {
+  background: #ff4444 !important;
+  color: #000;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+  flex-wrap: wrap; /* Перенос кнопок на новую строку */
+}
+
+.btn-back {
+  background: linear-gradient(to right, #444, #222);
+  color: #ff4444;
+  border: 2px solid #ff4444;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem; /* Уменьшаем размер текста */
+}
+
+.btn-back:hover {
+  color: #fff;
+  background: linear-gradient(to right, #ff4444, #8b0000);
+  transform: translateX(-5px);
+}
+
+.btn-back::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 68, 68, 0.3);
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.btn-back:hover::before {
+  width: 100%;
+}
+
+/* Добавьте анимацию для иконки */
+@keyframes warning-pulse {
+  0% { color: #ff4444; }
+  50% { color: #ff0000; }
+  100% { color: #ff4444; }
+}
+
+.btn-back:hover::after {
+  content: '⚠';
+  position: absolute;
+  right: -20px;
+  animation: warning-pulse 1s infinite;
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+  body {
+    margin: 10px; /* Уменьшаем внешние отступы */
+  }
+
+  .container {
+    padding: 20px; /* Уменьшаем внутренние отступы */
+    max-width: 95%; /* Делаем контейнер более гибким */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Еще меньше заголовок */
+  }
+
+  button, .btn-back {
+    padding: 8px 16px; /* Уменьшаем размер кнопок */
+    font-size: 0.9rem;
+  }
+
+  table {
+    font-size: 0.8rem; /* Еще меньше текст в таблице */
+  }
+
+  th, td {
+    padding: 8px; /* Уменьшаем отступы */
+  }
+
+  .message {
+    padding: 15px; /* Уменьшаем внутренние отступы */
+    font-size: 0.9rem;
+  }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+  body {
+    margin: 5px; /* Минимальные внешние отступы */
+  }
+
+  .container {
+    padding: 15px; /* Минимальные внутренние отступы */
+    max-width: 100%; /* Растягиваем контейнер на всю ширину */
+  }
+
+  h1 {
+    font-size: 1.6rem; /* Минимальный размер заголовка */
+  }
+
+  button, .btn-back {
+    padding: 6px 12px; /* Минимальные размеры кнопок */
+    font-size: 0.8rem;
+  }
+
+  table {
+    font-size: 0.7rem; /* Минимальный размер текста в таблице */
+  }
+
+  th, td {
+    padding: 6px; /* Минимальные отступы */
+  }
+
+  .message {
+    padding: 10px; /* Минимальные внутренние отступы */
+    font-size: 0.8rem;
+  }
+
+  .header-controls {
+    flex-direction: column; /* Кнопки в столбец */
+    align-items: flex-start; /* Выравнивание по левому краю */
+  }
+
+  .btn-back {
+    margin-right: 0; /* Убираем отступ справа */
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+  }
+}

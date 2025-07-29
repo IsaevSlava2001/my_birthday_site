@@ -1,0 +1,136 @@
+/* Базовые стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem; /* Уменьшаем размер заголовка */
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    resize: vertical;
+    font-size: 1rem; /* Уменьшаем размер текста */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem; /* Уменьшаем размер текста */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9rem; /* Уменьшаем размер текста в таблице */
+}
+
+.result th, .result td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.result th {
+    background-color: #007bff;
+    color: white;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+.back-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1rem; /* Уменьшаем размер текста */
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #aaa;
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    body {
+        margin: 10px; /* Уменьшаем внешние отступы */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Еще меньше заголовок */
+    }
+
+    .container {
+        padding: 15px; /* Уменьшаем внутренние отступы */
+        max-width: 95%; /* Делаем контейнер более гибким */
+    }
+
+    textarea {
+        height: 120px; /* Уменьшаем высоту текстового поля */
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 8px 16px; /* Уменьшаем размер кнопок */
+        font-size: 0.9rem;
+    }
+
+    .result table {
+        font-size: 0.8rem; /* Еще меньше текст в таблице */
+    }
+
+    .result th, .result td {
+        padding: 6px; /* Уменьшаем отступы */
+    }
+
+    .back-btn {
+        padding: 8px 16px; /* Уменьшаем размер кнопки "Назад" */
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  background: radial-gradient(circle at 50% 100%, #000 35%, #1a1a1a 100%);
+  font-family: 'Orbitron', monospace;
+  color: #c0c0c0;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border: 2px solid rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3), inset 0 0 5px #000;
+  animation: blood-drip 10s infinite;
+}
+
+@keyframes blood-drip {
+  0% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); }
+  100% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
+}
+
+.rps-icon {
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: contain;
+    margin: 0 10px;
+}
+
+h1 {
+  position: relative;
+  color: #ff4444;
+  text-shadow: 0 0 10px #000;
+  margin-bottom: 30px;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff4444, transparent);
+  bottom: -10px;
+  left: 0;
+  animation: blood-flow 5s infinite;
+}
+
+@keyframes blood-flow {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+.zombie-box {
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(90deg, #2d2d2d 0%, #1a1a1a 100%);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.zombie-box::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAI0lEQVQYV2NkYGAwZmBgOMuAABYwAmJgYuAEAAC0AAIYBCBFAAAAAElFTkSuQmCC') repeat;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: static-noise 2s infinite;
+}
+
+@keyframes static-noise {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+select,
+input[type="number"],
+button {
+  background: linear-gradient(to bottom, #444, #222);
+  color: #ff4444;
+  border: 2px solid #ff4444;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+select:hover,
+input[type="number"]:hover,
+button:hover {
+  color: #f24949;
+  background: linear-gradient(to bottom, #ff4444, #8b0000);
+  transform: translateX(-5px);
+}
+
+select:focus,
+input[type="number"]:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.rps-icon {
+  filter: drop-shadow(0 0 5px #000);
+  transition: transform 0.3s;
+}
+
+.rps-icon:hover {
+  transform: scale(1.1);
+}
+
+.success {
+  background: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  animation: highlight 1s ease;
+}
+
+.error {
+  background: #f44336;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  animation: flash 1s infinite;
+}
+
+@keyframes highlight {
+  0% { background-color: #4CAF50; }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}

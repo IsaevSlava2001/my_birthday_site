@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+/* Базовые стили */
+body {
+    margin: 0;
+    background: #1a1a1a;
+    font-family: 'Creepster', cursive;
+    color: #aaffaa;
+    line-height: 1.6;
+}
+
+.zombie-container {
+    max-width: 100%; /* Растягиваем на всю ширину */
+    margin: 20px auto; /* Уменьшаем внешние отступы */
+    padding: 20px; /* Уменьшаем внутренние отступы */
+    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+    border: 2px solid #4a902e;
+    border-radius: 10px; /* Уменьшаем радиус скругления */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3), inset 0 0 20px rgba(0, 128, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem; /* Уменьшаем размер заголовка */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 128, 0, 0.3);
+    margin-bottom: 20px; /* Уменьшаем внешние отступы */
+}
+
+.trade-form, .trade-list {
+    margin: 15px 0; /* Уменьшаем внешние отступы */
+}
+
+select, input[type="number"], button {
+    display: block;
+    width: 100%;
+    margin: 8px 0; /* Уменьшаем внешние отступы */
+    padding: 8px; /* Уменьшаем внутренние отступы */
+    border: 1px solid #4a902e;
+    background: #3d3d3d;
+    color: #aaffaa;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+button {
+    background: #8b0000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+button:hover {
+    background: #ff0000;
+    transform: scale(1.05);
+}
+
+.trade-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.trade-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px; /* Уменьшаем внутренние отступы */
+    margin: 5px 0; /* Уменьшаем внешние отступы */
+    background: #3d3d3d;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+.trade-list button {
+    margin-left: 8px; /* Уменьшаем расстояние */
+    font-size: 0.8rem; /* Уменьшаем размер текста */
+}
+
+input[type="number"] {
+    width: 60px; /* Уменьшаем ширину */
+    margin-right: 8px; /* Уменьшаем расстояние */
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    body {
+        margin: 10px; /* Уменьшаем внешние отступы */
+    }
+
+    .zombie-container {
+        padding: 15px; /* Ещё меньше внутренние отступы */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ещё меньше заголовок */
+    }
+
+    select, input[type="number"], button {
+        padding: 6px; /* Ещё меньше внутренние отступы */
+        font-size: 0.85rem; /* Ещё меньше текст */
+    }
+
+    button {
+        font-size: 0.85rem; /* Ещё меньше текст */
+    }
+
+    .trade-list li {
+        padding: 6px; /* Ещё меньше внутренние отступы */
+        font-size: 0.85rem; /* Ещё меньше текст */
+    }
+
+    .trade-list button {
+        font-size: 0.75rem; /* Ещё меньше текст */
+    }
+
+    input[type="number"] {
+        width: 50px; /* Ещё меньше ширина */
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        margin: 5px; /* Минимальные внешние отступы */
+    }
+
+    .zombie-container {
+        padding: 10px; /* Минимальные внутренние отступы */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Минимальный размер заголовка */
+    }
+
+    select, input[type="number"], button {
+        padding: 5px; /* Минимальные внутренние отступы */
+        font-size: 0.8rem; /* Минимальный размер текста */
+    }
+
+    button {
+        font-size: 0.8rem; /* Минимальный размер текста */
+    }
+
+    .trade-list li {
+        padding: 5px; /* Минимальные внутренние отступы */
+        font-size: 0.8rem; /* Минимальный размер текста */
+    }
+
+    .trade-list button {
+        font-size: 0.7rem; /* Минимальный размер текста */
+    }
+
+    input[type="number"] {
+        width: 40px; /* Минимальная ширина */
+    }
+}

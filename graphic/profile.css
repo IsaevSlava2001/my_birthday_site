@@ -1,0 +1,233 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #1a1a1a;
+    font-family: 'Creepster', cursive;
+    color: #aaffaa;
+    line-height: 1.6;
+}
+
+.zombie-profile {
+    width: 100%; /* Растягиваем на всю ширину */
+    max-width: 800px; /* Ограничиваем максимальную ширину */
+    margin: 20px auto; /* Уменьшаем внешние отступы */
+    padding: 20px; /* Уменьшаем внутренние отступы */
+    background: #2d2d2d;
+    border-radius: 10px; /* Уменьшаем радиус скругления */
+    box-shadow: 
+        0 0 15px rgba(0, 255, 0, 0.3),
+        inset 0 0 20px rgba(0, 128, 0, 0.2);
+    border: 2px solid #4a902e;
+}
+
+.greeting {
+    text-align: center;
+    font-size: 2rem; /* Уменьшаем размер заголовка */
+    text-shadow: 
+        0 0 5px rgba(0, 255, 0, 0.5),
+        0 0 10px rgba(0, 128, 0, 0.3);
+    margin-bottom: 20px; /* Уменьшаем внешние отступы */
+}
+
+.status-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка для маленьких экранов */
+    gap: 15px; /* Уменьшаем расстояние между элементами */
+    margin-bottom: 20px; /* Уменьшаем внешние отступы */
+}
+
+.status-block {
+    padding: 12px; /* Уменьшаем внутренние отступы */
+    background: #3d3d3d;
+    border: 1px solid #5a904e;
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+}
+
+.label {
+    display: block;
+    font-size: 14px; /* Уменьшаем размер текста */
+    color: #7dffa7;
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 18px; /* Уменьшаем размер текста */
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.scan-options {
+    display: flex;
+    flex-direction: column; /* Кнопки в столбец */
+    gap: 10px; /* Уменьшаем расстояние между элементами */
+    margin: 20px 0; /* Уменьшаем внешние отступы */
+}
+
+.option-btn {
+    padding: 15px; /* Уменьшаем внутренние отступы */
+    font-size: 14px; /* Уменьшаем размер текста */
+    background: #2f4f4f;
+    border-radius: 8px; /* Уменьшаем радиус скругления */
+    transition: 0.3s;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+    flex: 1;
+}
+
+.crafting{background-color: #000000;}
+.shop{background-color: #333333;}
+.earn{background-color: #000033;}
+.abilities{background-color: #4b0082;}
+.inventory{background-color: #8b0000;}
+.voting{background-color: #006400;}
+.trade{background-color: #5c3317;}
+.camera{background-color: #800080;}
+
+.option-btn:hover {
+    transform: scale(1.05);
+    background: #4a902e;
+}
+
+.input-method {
+    margin-top: 15px; /* Уменьшаем внешние отступы */
+}
+
+.zombie-input {
+    width: 100%;
+    padding: 12px; /* Уменьшаем внутренние отступы */
+    background: #3d3d3d;
+    border: 2px solid #4a902e;
+    color: #aaffaa;
+    font-size: 16px; /* Уменьшаем размер текста */
+    margin-bottom: 8px; /* Уменьшаем внешние отступы */
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+}
+
+.submit-btn {
+    background: #8b0000;
+    padding: 10px; /* Уменьшаем внутренние отступы */
+    width: 100%;
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+    font-size: 14px; /* Уменьшаем размер текста */
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #ff0000;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+.upload-btn {
+    background: #4a0090;
+    padding: 12px; /* Уменьшаем внутренние отступы */
+    width: 100%;
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+    font-size: 14px; /* Уменьшаем размер текста */
+    transition: 0.3s;
+}
+
+.upload-btn:hover {
+    background: #6a00c2;
+    transform: scale(1.05);
+}
+
+/* Стили для основных кнопок */
+.button-group button {
+    margin: 5px;
+    padding: 8px 15px; /* Уменьшаем внутренние отступы */
+    border: none;
+    border-radius: 6px; /* Уменьшаем радиус скругления */
+    font-family: 'Creepster', cursive;
+    font-size: 14px; /* Уменьшаем размер текста */
+    color: #aaffaa;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    body {
+        margin: 10px; /* Уменьшаем внешние отступы */
+    }
+
+    .zombie-profile {
+        padding: 15px; /* Ещё меньше внутренние отступы */
+    }
+
+    .greeting {
+        font-size: 1.8rem; /* Ещё меньше заголовок */
+    }
+
+    .status-block {
+        padding: 10px; /* Ещё меньше внутренние отступы */
+    }
+
+    .label {
+        font-size: 13px; /* Ещё меньше текст */
+    }
+
+    .value {
+        font-size: 16px; /* Ещё меньше текст */
+    }
+
+    .option-btn {
+        padding: 12px; /* Ещё меньше внутренние отступы */
+        font-size: 13px;
+    }
+
+    .submit-btn, .upload-btn {
+        padding: 8px; /* Ещё меньше внутренние отступы */
+        font-size: 13px;
+    }
+
+    .button-group button {
+        padding: 7px 12px; /* Ещё меньше внутренние отступы */
+        font-size: 13px;
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        margin: 5px; /* Минимальные внешние отступы */
+    }
+
+    .zombie-profile {
+        padding: 10px; /* Минимальные внутренние отступы */
+    }
+
+    .greeting {
+        font-size: 1.6rem; /* Минимальный размер заголовка */
+    }
+
+    .status-block {
+        padding: 8px; /* Минимальные внутренние отступы */
+    }
+
+    .label {
+        font-size: 12px; /* Минимальный размер текста */
+    }
+
+    .value {
+        font-size: 14px; /* Минимальный размер текста */
+    }
+
+    .option-btn {
+        padding: 10px; /* Минимальные внутренние отступы */
+        font-size: 12px;
+    }
+
+    .submit-btn, .upload-btn {
+        padding: 6px; /* Минимальные внутренние отступы */
+        font-size: 12px;
+    }
+
+    .button-group button {
+        padding: 6px 10px; /* Минимальные внутренние отступы */
+        font-size: 12px;
+    }
+}

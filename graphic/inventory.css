@@ -1,0 +1,195 @@
+/* Базовые стили */
+body {
+    background: #1a1a1a no-repeat center;
+    background-size: cover;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%; /* Растягиваем на всю ширину */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 10px; /* Уменьшаем внутренние отступы */
+}
+
+h1 {
+    color: #ff6b6b;
+    text-align: center;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.8rem; /* Уменьшаем размер заголовка */
+}
+
+.item {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #4ecdc4;
+    border-radius: 8px;
+    padding: 10px; /* Уменьшаем внутренние отступы */
+    margin: 10px 0;
+    width: 100%; /* Растягиваем на всю ширину */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.item-name {
+    font-weight: bold;
+    color: #4ecdc4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1rem; /* Уменьшаем размер текста */
+}
+
+.item-type {
+    color: #96ceb4;
+    margin: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+.item-effects {
+    color: #ffeead;
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Перенос кнопок на новую строку */
+}
+
+button {
+    background: linear-gradient(to bottom, #45b6fe, #1e96c8);
+    border: none;
+    padding: 6px 12px; /* Уменьшаем внутренние отступы */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+input[type="number"] {
+    width: 50px; /* Уменьшаем ширину */
+    padding: 4px; /* Уменьшаем внутренние отступы */
+    border: 1px solid #4ecdc4;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+}
+
+.back-btn {
+    background: linear-gradient(to bottom, #ff6b6b, #d92e2e);
+    margin-top: 15px; /* Уменьшаем внешние отступы */
+    width: 100%;
+    padding: 10px; /* Уменьшаем внутренние отступы */
+    font-size: 1rem; /* Уменьшаем размер текста */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Кровавые эффекты */
+.item:nth-child(even) {
+    background-size: contain;
+}
+
+.item:hover {
+    filter: drop-shadow(0 0 10px #ff0000);
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Уменьшаем внешние отступы */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Еще меньше заголовок */
+    }
+
+    .item {
+        padding: 8px; /* Еще меньше внутренние отступы */
+    }
+
+    .item-name {
+        font-size: 0.9rem; /* Еще меньше текст */
+    }
+
+    .item-type,
+    .item-effects {
+        font-size: 0.8rem; /* Еще меньше текст */
+    }
+
+    button {
+        padding: 5px 10px; /* Еще меньше внутренние отступы */
+        font-size: 0.8rem;
+    }
+
+    input[type="number"] {
+        width: 40px; /* Еще меньше ширина */
+    }
+
+    .back-btn {
+        padding: 8px; /* Еще меньше внутренние отступы */
+        font-size: 0.9rem;
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        padding: 5px; /* Минимальные внешние отступы */
+    }
+
+    h1 {
+        font-size: 1.4rem; /* Минимальный размер заголовка */
+    }
+
+    .item {
+        padding: 6px; /* Минимальные внутренние отступы */
+    }
+
+    .item-name {
+        font-size: 0.8rem; /* Минимальный размер текста */
+    }
+
+    .item-type,
+    .item-effects {
+        font-size: 0.7rem; /* Минимальный размер текста */
+    }
+
+    button {
+        padding: 4px 8px; /* Минимальные внутренние отступы */
+        font-size: 0.7rem;
+    }
+
+    input[type="number"] {
+        width: 30px; /* Минимальная ширина */
+    }
+
+    .back-btn {
+        padding: 6px; /* Минимальные внутренние отступы */
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,132 @@
+body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.zombie-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #ff4444;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 30px;
+}
+
+.zombie-form input {
+    width: calc(100% - 22px);
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ff6666;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.zombie-form button {
+    padding: 15px 30px;
+    background: #ff4444;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.zombie-form button:hover {
+    background: #cc0000;
+}
+
+.error-message {
+    background: #cc0000;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.invitation {
+    margin-top: 30px;
+}
+
+.invitation h2 {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00cc00;
+}
+
+.event-details {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.event-details div {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+.invitation-text {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    text-align: left;
+}
+
+.invitation-text h3 {
+    color: #ff4444;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px #cc0000;
+}
+
+.invitation-text p {
+    line-height: 1.5;
+    font-size: 1em;
+    color: #e0e0e0;
+}
+
+.invitation-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.invitation-text li {
+    margin-bottom: 5px;
+    color: #00ff00;
+}
+
+.invitation-text a {
+    color: #00ccff;
+    text-decoration: none;
+}
+
+.invitation-text a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .zombie-container {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 2em;
+    }
+    
+    .zombie-form input {
+        font-size: 1em;
+    }
+}
